@@ -2,7 +2,7 @@ import telebot
 import schedule
 import time
 
-CHAVE_API = "6737603177:AAGz3AlDfFQzxmrHFo9-UWT6xH5SrHpaH3Q"
+CHAVE_API = "sua_chave_api_aqui"
 
 bot = telebot.TeleBot(CHAVE_API)
 
@@ -21,6 +21,11 @@ schedule.every().day.at("10:26").do(enviar_mensagem)
 schedule.every().day.at("16:10").do(enviar_mensagem)
 schedule.every().day.at("21:30").do(enviar_mensagem)
 
+@bot.message_handler(func=lambda message: True)
+def responder(mensagem):
+    bot.reply_to(mensagem, "Fala meu chapa!!!")
+    # Definir a porta HTTP explicitamente para 80
+    bot.polling(none_stop=True, timeout=60, port=80)
 # Loop para executar o bot
 while True:
     # Verificar se há tarefas agendadas
@@ -29,10 +34,7 @@ while True:
     time.sleep(10)  # Ajuste o tempo de espera conforme necessário
 
 # Iniciar o bot para responder a mensagens de entrada
-@bot.message_handler(func=lambda message: True)
-def responder(mensagem):
-    bot.reply_to(mensagem, "Fala meu chapa!!!")
-    bot.polling(none_stop=True, timeout=60)
+
 
 # Se você preferir que o bot execute apenas uma vez e depois pare, pode usar bot.polling() em vez do loop while acima.
 # bot.polling()
