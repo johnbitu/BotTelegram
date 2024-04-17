@@ -36,12 +36,12 @@ def responder(mensagem):
     bot.reply_to(mensagem, "Fala meu chapa!!!")
 
 # Loop para executar o bot
-while True:
-    # Verificar se há tarefas agendadas
-    schedule.run_pending()
-    # Esperar um pouco antes de verificar novamente
+
+ # Verificar se há tarefas agendadas
+schedule.run_pending()
+# Esperar um pouco antes de verificar novamente
     
-    bot.polling(none_stop=True, timeout=60)
+bot.polling(none_stop=True, timeout=60)
 
 # Se você preferir que o bot execute apenas uma vez e depois pare, pode usar bot.polling() em vez do loop while acima.
 # bot.polling()
