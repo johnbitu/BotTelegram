@@ -2,7 +2,7 @@ import telebot
 import schedule
 import time
 
-CHAVE_API = "sua_chave_api_aqui"
+CHAVE_API = "6737603177:AAGz3AlDfFQzxmrHFo9-UWT6xH5SrHpaH3Q"
 
 bot = telebot.TeleBot(CHAVE_API)
 
