@@ -24,7 +24,7 @@ def enviar_mensagem():
 
 # Agendar o envio da mensagem de hora em hora
 schedule.every().day.at("10:26").do(enviar_mensagem)
-schedule.every().day.at("16:02").do(enviar_mensagem)
+schedule.every().day.at("16:10").do(enviar_mensagem)
 schedule.every().day.at("21:30").do(enviar_mensagem)
 
 # Função para permitir que o bot responda a mensagens de entrada
