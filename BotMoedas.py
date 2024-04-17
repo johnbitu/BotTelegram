@@ -40,7 +40,8 @@ while True:
     # Verificar se há tarefas agendadas
     schedule.run_pending()
     # Esperar um pouco antes de verificar novamente
-    time.sleep(10)  # Pode ajustar o tempo de espera conforme necessário
+    
+    bot.polling(none_stop=True, timeout=60, host='0.0.0.0')
 
 # Se você preferir que o bot execute apenas uma vez e depois pare, pode usar bot.polling() em vez do loop while acima.
 # bot.polling()
