@@ -41,7 +41,7 @@ while True:
     schedule.run_pending()
     # Esperar um pouco antes de verificar novamente
     
-    bot.polling(none_stop=True, timeout=60, host='0.0.0.0')
+    bot.polling(none_stop=True, timeout=60)
 
 # Se você preferir que o bot execute apenas uma vez e depois pare, pode usar bot.polling() em vez do loop while acima.
 # bot.polling()
